@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KEITH || MAKEUP SHOPS - Product List</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- box icons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <a href="#" class="logo"><i class="bx bxs-home"></i>Keith</a>
+
+      <ul class="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#shop">Our Shop</a></li>
+        <li><a href="index.html#review">Our Customer</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <a href="#"><i class="bx bx-search"></i></a>
+        <div class="cart-icon">
+          <i class="bx bx-cart"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+    </header>
+
+    <!-- Add this right after the header section -->
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h3>Shopping Cart</h3>
+          <button class="close-cart"><i class="bx bx-x"></i></button>
+        </div>
+        <div class="cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">Total: ₱<span id="cartTotal">0.00</span></div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this right after the cart modal -->
+    <div class="thank-you-modal" id="thankYouModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Thank You for Your Purchase!</h3>
+          <button class="close-modal" onclick="closeThankYouModal()">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <div class="purchase-details">
+          <h4>Order Summary:</h4>
+          <div id="purchasedItems"></div>
+          <div class="total-amount">
+            Total Amount: ₱<span id="purchaseTotal"></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Your order will be processed shortly.</p>
+          <button class="continue-shopping" onclick="closeThankYouModal()">
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product List Section -->
+    <section class="product-list" id="product-list">
+      <div class="back-nav">
+        <a href="index.html" class="back-btn">
+          <i class="bx bx-arrow-back"></i>
+          Back to Home
+        </a>
+      </div>
+
+      <div class="middle-text">
+        <h4>Our Collection</h4>
+        <h2>Mascara Products</h2>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="img/mascara/mascara1.png" alt="Mascara" />
+          <h3>KEITH Mascara 1</h3>
+          <!-- <p>Long-lasting matte finish with intense color payoff</p> -->
+          <div class="product-details">
+            <div class="price">
+              <span class="amount">₱179.00</span>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="decrementQuantity(this)">
+                -
+              </button>
+              <input type="number" value="1" min="1" class="qty-input" />
+              <button class="qty-btn" onclick="incrementQuantity(this)">
+                +
+              </button>
+            </div>
+          </div>
+          <div class="product-actions">
+            <button class="add-to-cart">ADD TO CART</button>
+            <button class="wishlist-btn">
+              <i class="bx bx-heart"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="img/mascara/mascara2.png" alt="Mascara" />
+          <h3>KEITH Mascara 2</h3>
+          <!-- <p>Long-lasting matte finish with intense color payoff</p> -->
+          <div class="product-details">
+            <div class="price">
+              <span class="amount">₱179.00</span>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="decrementQuantity(this)">
+                -
+              </button>
+              <input type="number" value="1" min="1" class="qty-input" />
+              <button class="qty-btn" onclick="incrementQuantity(this)">
+                +
+              </button>
+            </div>
+          </div>
+          <div class="product-actions">
+            <button class="add-to-cart">ADD TO CART</button>
+            <button class="wishlist-btn">
+              <i class="bx bx-heart"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="img/mascara/mascara3.png" alt="Mascara" />
+          <h3>KEITH Mascara 3</h3>
+          <!-- <p>Long-lasting matte finish with intense color payoff</p> -->
+          <div class="product-details">
+            <div class="price">
+              <span class="amount">₱179.00</span>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="decrementQuantity(this)">
+                -
+              </button>
+              <input type="number" value="1" min="1" class="qty-input" />
+              <button class="qty-btn" onclick="incrementQuantity(this)">
+                +
+              </button>
+            </div>
+          </div>
+          <div class="product-actions">
+            <button class="add-to-cart">ADD TO CART</button>
+            <button class="wishlist-btn">
+              <i class="bx bx-heart"></i>
+            </button>
+          </div>
+        </div>
+
+        
+
+        
+    </section>
+
+    <!-- scroll top -->
+    <a href="#" class="scroll">
+      <i class="bx bx-up-arrow-alt"></i>
+    </a>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/script.js"></script>
+    <script>
+      // Cart functionality
+      let cartItems = [];
+      const cartModal = document.getElementById("cartModal");
+      const cartCount = document.querySelector(".cart-count");
+      const cartItemsContainer = document.querySelector(".cart-items");
+      const cartTotal = document.getElementById("cartTotal");
+
+      // Toggle cart modal
+      document.querySelector(".cart-icon").addEventListener("click", () => {
+        cartModal.classList.toggle("open");
+        updateCartDisplay();
+      });
+
+      document.querySelector(".close-cart").addEventListener("click", () => {
+        cartModal.classList.remove("open");
+      });
+
+      // Add to cart functionality
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".product-card");
+          const productImg = card.querySelector("img").src;
+          const productTitle = card.querySelector("h3").textContent;
+          const productPrice = parseFloat(
+            card.querySelector(".amount").textContent.replace("₱", "")
+          );
+          const quantity = parseInt(card.querySelector(".qty-input").value);
+
+          // Add item to cart
+          const existingItem = cartItems.find(
+            (item) => item.title === productTitle
+          );
+          if (existingItem) {
+            existingItem.quantity += quantity;
+          } else {
+            cartItems.push({
+              title: productTitle,
+              price: productPrice,
+              quantity: quantity,
+              image: productImg,
+            });
+          }
+
+          updateCartDisplay();
+          cartModal.classList.add("open");
+        });
+      });
+
+      function updateCartDisplay() {
+        // Update cart count
+        const totalItems = cartItems.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+        cartCount.textContent = totalItems;
+
+        // Update cart items display
+        cartItemsContainer.innerHTML = cartItems
+          .map(
+            (item) => `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.title}">
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.title}</div>
+              <div class="cart-item-price">₱${(
+                item.price * item.quantity
+              ).toFixed(2)}</div>
+              <div class="cart-item-quantity">Qty: ${item.quantity}</div>
+            </div>
+            <button class="remove-item" onclick="removeItem('${item.title}')">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+        `
+          )
+          .join("");
+
+        // Update total
+        const total = cartItems.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        cartTotal.textContent = total.toFixed(2);
+      }
+
+      function removeItem(title) {
+        cartItems = cartItems.filter((item) => item.title !== title);
+        updateCartDisplay();
+      }
+
+      // Keep the existing quantity increment/decrement functions
+      function incrementQuantity(btn) {
+        const input = btn.previousElementSibling;
+        input.value = parseInt(input.value) + 1;
+      }
+
+      function decrementQuantity(btn) {
+        const input = btn.nextElementSibling;
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1;
+        }
+      }
+
+      // Add these new functions
+      function showThankYouModal() {
+        const thankYouModal = document.getElementById("thankYouModal");
+        const purchasedItemsDiv = document.getElementById("purchasedItems");
+        const purchaseTotal = document.getElementById("purchaseTotal");
+
+        // Generate HTML for purchased items
+        const itemsHTML = cartItems
+          .map(
+            (item) => `
+          <div class="purchased-item">
+            <span>${item.title} x${item.quantity}</span>
+            <span>₱${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `
+          )
+          .join("");
+
+        // Calculate total
+        const total = cartItems.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+
+        // Update modal content
+        purchasedItemsDiv.innerHTML = itemsHTML;
+        purchaseTotal.textContent = total.toFixed(2);
+
+        // Show thank you modal and hide cart modal
+        thankYouModal.classList.add("open");
+        cartModal.classList.remove("open");
+
+        // Clear cart
+        cartItems = [];
+        updateCartDisplay();
+      }
+
+      function closeThankYouModal() {
+        const thankYouModal = document.getElementById("thankYouModal");
+        thankYouModal.classList.remove("open");
+      }
+
+      // Update the checkout button click handler
+      document
+        .querySelector(".checkout-btn")
+        .addEventListener("click", function () {
+          if (cartItems.length > 0) {
+            showThankYouModal();
+          }
+        });
+    </script>
+  </body>
+</html>

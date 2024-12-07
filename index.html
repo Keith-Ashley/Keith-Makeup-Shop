@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KEITH || MAKEUP SHOPS</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/main/hero.png" />
+
+    <!-- box icons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <a href="#" class="logo"><i class="bx bxs-home"></i>Keith</a>
+
+      <ul class="navlist">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#shop">Our Shop</a></li>
+        <li><a href="#review">Our Customer</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <a href="#"><i class="bx bx-search"></i></a>
+        <div class="cart-icon">
+          <i class="bx bx-cart"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+    </header>
+
+    <!-- cart modal -->
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h3>Shopping Cart</h3>
+          <button class="close-cart"><i class="bx bx-x"></i></button>
+        </div>
+        <div class="cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">Total: ₱<span id="cartTotal">0.00</span></div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- thank you modal -->
+    <div class="thank-you-modal" id="thankYouModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Thank You for Your Purchase!</h3>
+          <button class="close-modal" onclick="closeThankYouModal()">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <div class="purchase-details">
+          <h4>Order Summary:</h4>
+          <div id="purchasedItems"></div>
+          <div class="total-amount">
+            Total Amount: ₱<span id="purchaseTotal"></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Your order will be processed shortly.</p>
+          <button class="continue-shopping" onclick="closeThankYouModal()">
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- home section -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>Discover, <span>Beauty & </span> <br />Enhance Your <br />Glow</h1>
+        <a href="allproducts.html" class="btn"
+          >Explore Products <i class="bx bxs-right-arrow"></i
+        ></a>
+        <a href="allproducts.html" class="btn2">Order Now</a>
+      </div>
+
+      <div class="home-img">
+        <img src="img/main/hero.png" />
+      </div>
+    </section>
+
+    <!-- Container -->
+    <section class="container">
+      <div class="container-box">
+        <img src="img/c1.png" />
+        <h3>11:00 am - 8:00 pm</h3>
+        <a href="#">Open Hours</a>
+      </div>
+
+      <div class="container-box">
+        <img src="img/c2.png" />
+        <h3>108 Lacuna St. Poblacion 1 Peñaranda Nueva Ecija</h3>
+        <a href="#">Get Directions</a>
+      </div>
+
+      <div class="container-box">
+        <img src="img/c3.png" />
+        <h3>09319951006</h3>
+        <a href="#">Call Us Now</a>
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="img/main/about.png" />
+      </div>
+
+      <div class="about-text">
+        <h2>Living well begins <br />with Makeup well.</h2>
+        <p>
+          At Keith Make Up Shop, we specialize in transforming your look with
+          premium makeup products. Our mission is to help you discover your
+          perfect style through our extensive collection of professional-grade
+          cosmetics and beauty tools. <br />
+          <br />
+          From everyday essentials to glamorous special occasion looks, our
+          expert team is passionate about makeup artistry and dedicated to
+          helping you achieve your desired aesthetic with the perfect products
+          and techniques.
+        </p>
+        <a href="#" class="btn"
+          >Explore Story <i class="bx bxs-right-arrow"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- Our Shop -->
+    <section class="shop" id="shop">
+      <div class="middle-text">
+        <h4>Our Shop</h4>
+        <h2>Lets Check Popular Products</h2>
+      </div>
+
+      <div class="shop-content">
+        <div class="row">
+          <img src="img/main/p1.png" />
+          <h3>Squad Cosmetics Conceal It in CL2</h3>
+          <div class="in-text">
+            <div class="price">
+              <h6>₱199.00</h6>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="decrementQuantity(this)">
+                -
+              </button>
+              <input type="number" value="1" min="1" class="qty-input" />
+              <button class="qty-btn" onclick="incrementQuantity(this)">
+                +
+              </button>
+            </div>
+            <div class="s-btnn">
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="top-icon">
+            <a href="#"><i class="bx bx-heart"></i></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <img src="img/main/p2.png" />
+          <h3>Mist Pink</h3>
+          <div class="in-text">
+            <div class="price">
+              <h6>₱229.00</h6>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="decrementQuantity(this)">
+                -
+              </button>
+              <input type="number" value="1" min="1" class="qty-input" />
+              <button class="qty-btn" onclick="incrementQuantity(this)">
+                +
+              </button>
+            </div>
+            <div class="s-btnn">
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="top-icon">
+            <a href="#"><i class="bx bx-heart"></i></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <img src="img/main/p3.png" />
+          <h3>MATTE Face Powder Natural</h3>
+          <div class="in-text">
+            <div class="price">
+              <h6>₱150.00</h6>
+            </div>
+            <div class="quantity-controls">
+              <button class="qty-btn" onclick="decrementQuantity(this)">
+                -
+              </button>
+              <input type="number" value="1" min="1" class="qty-input" />
+              <button class="qty-btn" onclick="incrementQuantity(this)">
+                +
+              </button>
+            </div>
+            <div class="s-btnn">
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="top-icon">
+            <a href="#"><i class="bx bx-heart"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-btn">
+        <a href="allproducts.html" class="btn"
+          >All Products <i class="bx bxs-right-arrow"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+      <div class="middle-text">
+        <h4>Our Categories</h4>
+        <h2>Explore Our Product Lines</h2>
+      </div>
+
+      <div class="categories-content">
+        <div class="cat-box">
+          <img src="img/categories/lipstick.png" alt="Lipstick Products" />
+          <h3>Lipstick</h3>
+          <p>Classic, matte, and liquid lipsticks in a wide range of shades</p>
+          <a href="lipstick.html" class="cat-btn">
+            View Products <i class="bx bxs-right-arrow"></i>
+          </a>
+        </div>
+
+        <div class="cat-box">
+          <img src="img/categories/eyeshadow.png" alt="Eyeshadow Products" />
+          <h3>Eyeshadow</h3>
+          <p>Palettes and singles in shimmer, matte, and metallic finishes</p>
+          <a href="eyeshadow.html" class="cat-btn">
+            View Products <i class="bx bxs-right-arrow"></i>
+          </a>
+        </div>
+
+        <div class="cat-box">
+          <img src="img/categories/blushon.png" alt="Blush On Products" />
+          <h3>Blush On</h3>
+          <p>Powder, cream, and liquid blushes for a natural flush</p>
+          <a href="blushon.html" class="cat-btn"
+            >View Products <i class="bx bxs-right-arrow"></i
+          ></a>
+        </div>
+
+        <div class="cat-box">
+          <img src="img/categories/mascara.png" alt="Mascara Products" />
+          <h3>Mascara</h3>
+          <p>Volumizing, lengthening, and waterproof mascaras</p>
+          <a href="mascara.html" class="cat-btn"
+            >View Products <i class="bx bxs-right-arrow"></i
+          ></a>
+        </div>
+
+        <div class="cat-box">
+          <img src="img/categories/lipliner.png" alt="Lip Liner Products" />
+          <h3>Lip Liner</h3>
+          <p>Precise lip liners to define and enhance your lip shape</p>
+          <a href="lipliner.html" class="cat-btn"
+            >View Products <i class="bx bxs-right-arrow"></i
+          ></a>
+        </div>
+
+        <div class="cat-box">
+          <img src="img/categories/concealer.png" alt="Concealer Products" />
+          <h3>Concealer</h3>
+          <p>Full coverage concealers for flawless complexion</p>
+          <a href="concealer.html" class="cat-btn"
+            >View Products <i class="bx bxs-right-arrow"></i
+          ></a>
+        </div>
+
+        <div class="cat-box">
+          <img
+            src="img/categories/highlighter.png"
+            alt="Highlighter Products"
+          />
+          <h3>Highlighter</h3>
+          <p>Powder and liquid highlighters for a radiant glow</p>
+          <a href="highlighter.html" class="cat-btn"
+            >View Products <i class="bx bxs-right-arrow"></i
+          ></a>
+        </div>
+
+        <div class="cat-box">
+          <img
+            src="img/facepowder/facepowder6.png"
+            alt="Highlighter Products"
+          />
+          <h3>Facepowder</h3>
+          <p>Loose and pressed face powders for a smooth, matte finish</p>
+          <a href="facepowder.html" class="cat-btn"
+            >View Products <i class="bx bxs-right-arrow"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="review" id="review">
+      <div class="middle-text">
+        <h4>Our Customer</h4>
+        <h2>Clients Review About Our Food</h2>
+      </div>
+
+      <div class="review-content">
+        <div class="box">
+          <p>
+            "I bought makeup from Keith Makeup Shops as a gift for my girlfriend
+            and was blown away by the exceptional service and quality of their
+            products. The staff were friendly and knowledgeable, and helped me
+            find the perfect makeup items that she would love. I highly
+            recommend this shop to anyone looking to buy makeup gifts for their
+            loved ones!" - Darwin Melaya.
+          </p>
+          <div class="in-box">
+            <div class="bx-img">
+              <!-- <img src="img/r1.jpg" /> -->
+            </div>
+            <div class="bxx-text">
+              <h4>Darwin Melaya</h4>
+              <div class="ratings">
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <p>
+            "I recently visited Keith Makeup Shops and was blown away by the
+            exceptional service and quality of their products. The staff were
+            friendly and knowledgeable, and helped me find the perfect makeup
+            look for my special occasion. I highly recommend this shop to anyone
+            looking for a great makeup experience!" - Alyza Queen Dela Cruz.
+          </p>
+          <div class="in-box">
+            <div class="bx-img">
+              <!-- <img src="img/r2.jpg" /> -->
+            </div>
+            <div class="bxx-text">
+              <h4>Alyza Queen Dela Cruz</h4>
+              <div class="ratings">
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <p>
+            "Keith Makeup Shops has an amazing selection of high-quality makeup
+            products. I love how they carry both luxury and affordable brands.
+            The staff really know their stuff and gave me great recommendations
+            for my skin type. The store is always clean and well-organized.
+            Shopping here is always a wonderful experience!" - Shiela Mae
+            Lacanaria.
+          </p>
+          <div class="in-box">
+            <div class="bx-img">
+              <!-- <img src="img/r3.jpg" /> -->
+            </div>
+            <div class="bxx-text">
+              <h4>Shiela Mae Lacanaria</h4>
+              <div class="ratings">
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+                <a href="#"><i class="bx bxs-star"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section class="contact" id="contact">
+      <div class="contact-content">
+        <div class="contact-text">
+          <h2>Contact Us</h2>
+          <p>
+            If you have any questions or would like to learn more about our
+            makeup products and services, please feel free to contact us using
+            the form below. We look forward to hearing from you!
+          </p>
+          <div class="social">
+            <a href="#" class="clr"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-github"></i></a>
+            <a href="#"><i class="bx bxl-google"></i></a>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="main-d">
+            <a href="#"
+              ><i class="bx bxs-location-plus"></i>108 Lacuna St. Poblacion 1
+              Peñaranda Nueva Ecija</a
+            >
+          </div>
+
+          <div class="main-d">
+            <a href="#"><i class="bx bx-mobile-alt"></i>09319951006</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact form section -->
+    <section class="contact-form" id="contact-form">
+      <div class="contact-container">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-left"
+        >
+          <div class="contact-left-title">
+            <h2>Email Us!</h2>
+            <hr />
+          </div>
+          <input
+            type="hidden"
+            name="access_key"
+            value="e5e27d4d-6b36-4ec4-a219-fa764ef5c428"
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="contact-inputs"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            class="contact-inputs"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            class="contact-inputs"
+            required
+          ></textarea>
+          <button type="submit" class="submit-btn">
+            Submit <i class="bx bx-right-arrow-alt"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- scroll top -->
+    <a href="#" class="scroll">
+      <i class="bx bx-up-arrow-alt"></i>
+    </a>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- link to js -->
+    <script src="js/script.js"></script>
+
+    <!-- Cart functionality -->
+    <script>
+      // Cart functionality
+      let cartItems = [];
+      const cartModal = document.getElementById("cartModal");
+      const cartCount = document.querySelector(".cart-count");
+      const cartItemsContainer = document.querySelector(".cart-items");
+      const cartTotal = document.getElementById("cartTotal");
+
+      // Toggle cart modal
+      document.querySelector(".cart-icon").addEventListener("click", () => {
+        cartModal.classList.toggle("open");
+        updateCartDisplay();
+      });
+
+      document.querySelector(".close-cart").addEventListener("click", () => {
+        cartModal.classList.remove("open");
+      });
+
+      // Add to cart functionality
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const row = this.closest(".row");
+          const productImg = row.querySelector("img").src;
+          const productTitle = row.querySelector("h3").textContent;
+          const productPrice = parseFloat(
+            row.querySelector(".price h6").textContent.replace("₱", "")
+          );
+          const quantity = parseInt(
+            row.querySelector(".qty-input")?.value || 1
+          );
+
+          // Add item to cart
+          const existingItem = cartItems.find(
+            (item) => item.title === productTitle
+          );
+          if (existingItem) {
+            existingItem.quantity += quantity;
+          } else {
+            cartItems.push({
+              title: productTitle,
+              price: productPrice,
+              quantity: quantity,
+              image: productImg,
+            });
+          }
+
+          updateCartDisplay();
+          cartModal.classList.add("open");
+        });
+      });
+
+      function updateCartDisplay() {
+        // Update cart count
+        const totalItems = cartItems.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+        cartCount.textContent = totalItems;
+
+        // Update cart items display
+        cartItemsContainer.innerHTML = cartItems
+          .map(
+            (item) => `
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.title}">
+              <div class="cart-item-details">
+                <div class="cart-item-title">${item.title}</div>
+                <div class="cart-item-price">₱${(
+                  item.price * item.quantity
+                ).toFixed(2)}</div>
+                <div class="cart-item-quantity">Qty: ${item.quantity}</div>
+              </div>
+              <button class="remove-item" onclick="removeItem('${item.title}')">
+                <i class="bx bx-x"></i>
+              </button>
+            </div>
+          `
+          )
+          .join("");
+
+        // Update total
+        const total = cartItems.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        cartTotal.textContent = total.toFixed(2);
+      }
+
+      // Rest of the functions
+      function removeItem(title) {
+        cartItems = cartItems.filter((item) => item.title !== title);
+        updateCartDisplay();
+      }
+
+      function incrementQuantity(btn) {
+        const input = btn.previousElementSibling;
+        input.value = parseInt(input.value) + 1;
+      }
+
+      function decrementQuantity(btn) {
+        const input = btn.nextElementSibling;
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1;
+        }
+      }
+
+      function showThankYouModal() {
+        const thankYouModal = document.getElementById("thankYouModal");
+        const purchasedItemsDiv = document.getElementById("purchasedItems");
+        const purchaseTotal = document.getElementById("purchaseTotal");
+
+        const itemsHTML = cartItems
+          .map(
+            (item) => `
+            <div class="purchased-item">
+              <span>${item.title} x${item.quantity}</span>
+              <span>₱${(item.price * item.quantity).toFixed(2)}</span>
+            </div>
+          `
+          )
+          .join("");
+
+        const total = cartItems.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+
+        purchasedItemsDiv.innerHTML = itemsHTML;
+        purchaseTotal.textContent = total.toFixed(2);
+
+        thankYouModal.classList.add("open");
+        cartModal.classList.remove("open");
+
+        cartItems = [];
+        updateCartDisplay();
+      }
+
+      function closeThankYouModal() {
+        const thankYouModal = document.getElementById("thankYouModal");
+        thankYouModal.classList.remove("open");
+      }
+
+      // Add checkout button handler
+      document
+        .querySelector(".checkout-btn")
+        .addEventListener("click", function () {
+          if (cartItems.length > 0) {
+            showThankYouModal();
+          }
+        });
+    </script>
+  </body>
+</html>
